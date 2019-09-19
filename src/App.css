@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese');
 
 * {
   margin: 0;
@@ -7,26 +7,19 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 .App {
   display: grid;
-  grid-template-columns: 700px;
   justify-content: center;
 
-  font-family:'Shadows Into Light', cursive;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 25px;
 }
 
 .App_list {
-  width: 700px;
-
-  margin: 20px 0;
+  width: 100%;
 
   list-style: none;
-  box-shadow: 0 0 10px gray;
 }
 
 .App_list-lvl {
@@ -38,7 +31,7 @@ body {
 }
 
 .App_list-lvl-0 {
-  background-color: #86E383;
+  background-color: lightgreen;
 }
 
 .App_list-lvl-1 {
@@ -57,44 +50,9 @@ body {
   background-color: #E65D1B;
 }
 
-@media (  max-width: 720px) {
+@media (  max-width: 300px) {
 
   .App {
-    grid-template-columns: 600px;
-  }
-}
-
-@media (  max-width: 620px) {
-
-  .App {
-    grid-template-columns: 500px;
-  }
-}
-
-@media (  max-width: 520px) {
-
-  .App {
-    grid-template-columns: 400px;
-  }
-}
-
-@media (  max-width: 420px) {
-
-  .App {
-    grid-template-columns: 300px;
-  }
-}
-
-@media (  max-width: 320px) {
-
-  .App {
-    grid-template-columns: 200px;
-  }
-}
-
-@media (  max-width: 220px) {
-
-  .App {
-    grid-template-columns: 100px;
+    font-size: 18px;
   }
 }
