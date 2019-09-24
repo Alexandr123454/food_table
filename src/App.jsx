@@ -25,7 +25,7 @@ class App extends React.Component {
     <Spring
       from={{ marginTop: -5000 }}
       to={{ marginTop: 0 }}
-      config={{tension: 100}}
+      config={{tension: 80}}
     >
       {props => (
         <div style={props}>
@@ -76,17 +76,16 @@ class ListItem extends React.Component {
       <div
         onClick={() => {this.handleClick()}}
       > 
-        <b className="App_list-lvl-number">{item.id}й список</b> <br/>
+        <b className="App_list-lvl-number">{item.id}й список:</b> <br/>
         {item.lvl} <br/> 
         <p className="App_list-lvl-show-info">
           Нажмите для более детальной информации
         </p>
         <Transition
-          native
           items={this.state.clicked}
-          from={{ opacity: 0, duration: 3000 }}
-          enter={{ opacity: 1, duration: 3000 }}
-          leave={{ opacity: 0, duration: 3000 }}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
         >
           {show =>
             show &&
