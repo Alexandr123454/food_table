@@ -14,6 +14,8 @@
 
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 25px;
+
+  user-select: none;
 }
 
 .App_list {
@@ -23,31 +25,24 @@
 }
 
 .App_list-lvl {
-  padding: 20px;
+  padding: 20px 40px;
 }
 
 .App_list-lvl-sign {
   text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
-.App_list-lvl-0 {
-  background-color: lightgreen;
+.App_list-lvl-add-info {
+  font-size: 18px;
+  margin: 5px 0 0 0;
 }
 
-.App_list-lvl-1 {
-  background-color: #CAE383;
-}
-
-.App_list-lvl-2 {
-  background-color: #E3D175;
-}
-
-.App_list-lvl-3 {
-  background-color: #E69E1B;
-}
-
-.App_list-lvl-4 {
-  background-color: #E65D1B;
+.App_list-lvl-show-info {
+  margin-top: 5px;
+  font-size: 20px;
 }
 
 @media (  max-width: 300px) {

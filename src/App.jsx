@@ -1,39 +1,108 @@
 import React from 'react';
-import API_DATA from './API_DATA'
+import {API_DATA, API_DATA_ADD_DATA} from './API_DATA'
+import { Spring, Transition, animated } from 'react-spring/renderprops';
 import './App.css';
 
-function App() {
-  const levelOfFoods = API_DATA;
+class App extends React.Component {
+  state = { 
+    levelOfFoodsAndAddData: [],
+  }
+  
+  componentDidMount() {
+    const levelOfFoodsAndAddData = API_DATA.map(item1 => ({
+      ...item1,
+      addData: API_DATA_ADD_DATA.find(item2 => item1.id === item2.dataId),
+    }));
 
-  return (
-    <div className="App">
-      <ul className="App_list">
-        <li className="App_list-lvl App_list-lvl-sign ">
-          СПИСОК ПРОДУКТОВ
-        </li>
-        <li className="App_list-lvl App_list-lvl-0">
-          <b>Первый список:</b> <br/>
-          {levelOfFoods.zeroLevel}
-        </li>
-        <li className="App_list-lvl App_list-lvl-1">
-          <b>Второй список:</b> <br/>
-          {levelOfFoods.firstLevel}
-        </li>
-        <li className="App_list-lvl App_list-lvl-2">
-          <b>Третий список:</b> <br/>
-          {levelOfFoods.secondLevel}
-        </li>
-        <li className="App_list-lvl App_list-lvl-3">
-          <b>Четвертый список:</b> <br/>
-          {levelOfFoods.thirdLevel}
-        </li>
-        <li className="App_list-lvl App_list-lvl-4">
-          <b>Пятый список:</b> <br/>
-          {levelOfFoods.fourthLevel}
-        </li>
-      </ul>
-    </div>
-  );
+    this.setState({
+      levelOfFoodsAndAddData: levelOfFoodsAndAddData,
+    });
+  }
+
+  render() {
+    return (
+
+    <Spring
+      from={{ marginTop: -5000 }}
+      to={{ marginTop: 0 }}
+      config={{tension: 100}}
+    >
+      {props => (
+        <div style={props}>
+          <div className="App">
+            <div className="App_list">
+              <div className="App_list-lvl App_list-lvl-sign ">
+                СПИСОК ПРОДУКТОВ
+              </div>
+                <ItemList item={this.state.levelOfFoodsAndAddData}/>
+            </div>
+          </div>
+        </div>
+      )}
+    </Spring>
+      
+    )
+  }
 }
+
+const ItemList = ({item}) => (
+  <div>
+    {item.map(item => (
+      <div 
+        key={item.key}
+        style={{backgroundColor: item.color}}
+        className="App_list-lvl"
+      >
+        <ListItem item={item} />
+      </div>
+    ))}
+  </div>
+)
+
+class ListItem extends React.Component {
+  state = {
+    clicked: false,
+  }
+
+  handleClick = () => {
+    this.setState(state => ({
+      clicked: !state.clicked,
+    }))
+  }
+
+  render() {
+    const { item } = this.props
+    return (
+      <div
+        onClick={() => {this.handleClick()}}
+      > 
+        <b>{item.id}ый список</b> <br/> <br/>
+        {item.lvl} <br/> <br/>
+        <p className="App_list-lvl-show-info">
+          Нажмите для более детальной информации
+        </p>
+        <Transition
+          native
+          items={this.state.clicked}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+        >
+          {show =>
+            show &&
+            (props => (
+              <animated.div style={props}>
+                <div className="App_list-lvl-add-info">
+                  {item.addData.addData} 
+                </div>
+              </animated.div>
+            ))
+          }
+        </Transition>
+      </div>
+    )
+  }
+}
+
 
 export default App;
