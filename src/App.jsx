@@ -76,17 +76,17 @@ class ListItem extends React.Component {
       <div
         onClick={() => {this.handleClick()}}
       > 
-        <b>{item.id}ый список</b> <br/> <br/>
-        {item.lvl} <br/> <br/>
+        <b className="App_list-lvl-number">{item.id}й список</b> <br/>
+        {item.lvl} <br/> 
         <p className="App_list-lvl-show-info">
           Нажмите для более детальной информации
         </p>
         <Transition
           native
           items={this.state.clicked}
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
+          from={{ opacity: 0, duration: 3000 }}
+          enter={{ opacity: 1, duration: 3000 }}
+          leave={{ opacity: 0, duration: 3000 }}
         >
           {show =>
             show &&

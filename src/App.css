@@ -25,7 +25,7 @@
 }
 
 .App_list-lvl {
-  padding: 20px 40px;
+  padding: 20px 20px;
 }
 
 .App_list-lvl-sign {
@@ -35,14 +35,19 @@
   background-color: white;
 }
 
+.App_list-lvl-number {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
 .App_list-lvl-add-info {
   font-size: 18px;
-  margin: 5px 0 0 0;
+  margin: 5px 0;
 }
 
 .App_list-lvl-show-info {
-  margin-top: 5px;
-  font-size: 20px;
+  margin: 10px 0 5px 0;
+  font-size: 15px;
 }
 
 @media (  max-width: 300px) {
