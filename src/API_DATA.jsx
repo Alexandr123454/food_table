@@ -31,30 +31,34 @@ export const API_DATA = [
 ]
 
 export const API_DATA_ADD_DATA = [
-  {
-    addData: 'Luctus mattis. Feugiat aptent. Nostra dictumst convallis eleifend, nam iaculis class tristique donec faucibus sodales eleifend suspendisse pulvinar tempor neque sagittis porttitor, libero dictum augue. Ornare elementum sodales lacus urna odio molestie vivamus mauris lobortis pharetra.',
-    dataId: 3,
-  },
 
   {
-    addData: 'Luctus mattis. Feugiat aptent. Nostra dictumst convallis eleifend, nam iaculis class tristique donec faucibus sodales eleifend suspendisse pulvinar tempor neque sagittis porttitor, libero dictum augue. Ornare elementum sodales lacus urna odio molestie vivamus mauris lobortis pharetra.',
-    dataId: 4,
-  },
-
-  {
-    addData: 'Luctus mattis. Feugiat aptent. Nostra dictumst convallis eleifend, nam iaculis class tristique donec faucibus sodales eleifend suspendisse pulvinar tempor neque sagittis porttitor, libero dictum augue. Ornare elementum sodales lacus urna odio molestie vivamus mauris lobortis pharetra.',
+    addData: `На данный момент информация отсутствует, в ближейшем времени она появиться! 
+    Хорошего дня!)`,
     dataId: 1,
   },
 
   {
-    addData: 'Luctus mattis. Feugiat aptent. Nostra dictumst convallis eleifend, nam iaculis class tristique donec faucibus sodales eleifend suspendisse pulvinar tempor neque sagittis porttitor, libero dictum augue. Ornare elementum sodales lacus urna odio molestie vivamus mauris lobortis pharetra.',
+    addData: `На данный момент информация отсутствует, в ближейшем времени она появиться! 
+    Хорошего дня!)`,
     dataId: 2,
   },
 
-  
+  {
+    addData: `На данный момент информация отсутствует, в ближейшем времени она появиться! 
+    Хорошего дня!)`,
+    dataId: 3,
+  },
 
   {
-    addData: 'Luctus mattis. Feugiat aptent. Nostra dictumst convallis eleifend, nam iaculis class tristique donec faucibus sodales eleifend suspendisse pulvinar tempor neque sagittis porttitor, libero dictum augue. Ornare elementum sodales lacus urna odio molestie vivamus mauris lobortis pharetra.',
+    addData: `На данный момент информация отсутствует, в ближейшем времени она появиться! 
+    Хорошего дня!)`,
+    dataId: 4,
+  },
+
+  {
+    addData: `На данный момент информация отсутствует, в ближейшем времени она появиться! 
+    Хорошего дня!)`,
     dataId: 5,
   },
 ]
